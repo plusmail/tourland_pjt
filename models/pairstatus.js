@@ -1,20 +1,21 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('pairstatus', {
-    productId: {
+    pno: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      comment: "상품번호",
       references: {
         model: 'product',
-        key: 'id'
+        key: 'pno'
       }
     },
-    airplaneId: {
-      autoIncrement: true,
+    ano: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      comment: "항공번호",
       references: {
         model: 'airplane',
         key: 'id'
@@ -23,22 +24,22 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     sequelize,
     tableName: 'pairstatus',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "PRIMARY",
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "airplaneId" },
-          { name: "productId" },
+          { name: "pno" },
+          { name: "ano" },
         ]
       },
       {
-        name: "productId",
+        name: "FK_airplane_TO_pairstatus2",
         using: "BTREE",
         fields: [
-          { name: "productId" },
+          { name: "ano" },
         ]
       },
     ]

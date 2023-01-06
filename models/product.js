@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('product', {
-    id: {
+    pno: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -36,11 +36,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: true,
       comment: "상품구분"
-    },
-    pcapacity: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      comment: "상품인원"
     }
   }, {
     sequelize,
@@ -52,7 +47,7 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         using: "BTREE",
         fields: [
-          { name: "id" },
+          { name: "pno" },
         ]
       },
     ]

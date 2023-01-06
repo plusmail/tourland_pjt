@@ -15,10 +15,10 @@
     </div>
     <div id="loginBox">
         <form action="loginManagerForm" method="post">
-            <% if (registerSuccess != null) { %>
-                <h2>가입 완료 되었습니다. 로그인 수행하여 주십시오.</h2>
+            <% if (loginSuccess === "true") { %>
+                <h2>로그인 수행하여 주십시오.</h2>
             <% } %>
-            <% if (registerSuccess == null ) { %>
+            <% if (loginSuccess === "false" ) { %>
                 <h2>투어랜드</h2>
             <% } %>
             <div id="loginInnerBox">

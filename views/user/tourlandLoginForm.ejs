@@ -15,10 +15,10 @@
     </div>
     <div id="loginBox">
         <form action="/customer/loginForm" method="post">
-            <% if (registerSuccess != null) { %>
+            <% if (loginSuccess != null) { %>
                 <h3>아이디 또는 비밀번호가 틀렸습니다.<br> 다시 로그인 수행하여 주십시오.</h3>
             <% } %>
-            <% if (registerSuccess == null ) { %>
+            <% if (loginSuccess == null ) { %>
                 <h2>투어랜드</h2>
             <% } %>
             <div id="loginInnerBox">

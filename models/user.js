@@ -2,7 +2,6 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('user', {
     userno: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -39,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
       comment: "유저아이디"
     },
     userpass: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.STRING(41),
       allowNull: true,
       comment: "유저비밀번호"
     },
